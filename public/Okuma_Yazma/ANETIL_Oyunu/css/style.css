@@ -1,0 +1,130 @@
+/* Oyun alanını düzenleme */
+#game-area {
+    text-align: center;
+    margin-top: 0; /* En yukarı taşıyoruz */
+}
+
+/* Başlık */
+h1 {
+    margin-top: 0; /* Başlığı en üste sabitliyoruz */
+    padding-top: 10px; /* Çok az bir iç boşluk ekliyoruz */
+    font-size: 2em;
+}
+
+/* Görselin yerleşimi */
+img {
+    margin-top: 10px; /* Görseli başlığın hemen altına taşıyoruz */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px; /* Masaüstü için görsel boyutu */
+    max-width: 100%; /* Mobilde görüntüyü sığdırmak için */
+}
+
+/* Harf ve kelime alanlarını düzenleme */
+#word-area, #letter-area {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Harflerin stilini ve kutu görünümünü ayarlama */
+.letter {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    border: 2px solid #ddd;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    transition: background-color 0.3s ease;
+}
+
+/* Seçilen harfin rengi (aktif olan harf yeşil olacak) */
+.letter.active {
+    background-color: #a0e7a0; /* Yeşil arka plan */
+    border-color: #5cb85c;     /* Yeşil sınır */
+    cursor: default;           /* Artık tıklanamaz */
+}
+
+/* Boş Kutular (şeffaf olacak ve harf geldiğinde kaybolacak) */
+.drop-area {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background-color: transparent;
+    border: 2px solid #ccc;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 24px;
+    line-height: 50px;
+}
+
+/* Harf kutusu dolu olduğunda sınır ve arka planı gizle */
+.drop-area.has-letter {
+    border: none; /* Harf gelince kutu görünmez olacak */
+    background-color: transparent; /* Şeffaf arka plan */
+}
+
+/* Oyundan Çık butonu */
+.exit-btn {
+    background-color: #ff6666;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    max-width: 200px; /* Buton genişliği */
+}
+
+.exit-btn:hover {
+    background-color: #ff4d4d;
+}
+
+/* Başlat butonu */
+#start-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#start-button:hover {
+    background-color: #45a049;
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+    .letter, .drop-area {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        line-height: 35px;
+    }
+
+    img {
+        width: 250px; /* Mobil için görsel boyutu */
+    }
+
+    /* Oyundan Çık butonunu mobilde daha iyi görünür yapmak */
+    .exit-btn {
+        width: 100%; /* Butonu tam genişlikte yap */
+        max-width: none; /* Mobilde sınırsız genişlik */
+    }
+}

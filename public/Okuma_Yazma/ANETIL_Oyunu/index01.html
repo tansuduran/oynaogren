@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANETİL Harf Grubu Kelime Oluşturma Oyunu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Tüm öğeleri ortalamak için düzenleme */
+        body {
+            text-align: center; /* Tüm öğeleri ortalayacak */
+        }
+
+        #game-area {
+            display: inline-block; /* İçerik ortalansın diye */
+            text-align: center;
+        }
+
+        img {
+            margin-top: 20px;
+            width: 350px; /* Varsayılan boyut masaüstü için */
+        }
+
+        /* Masaüstü cihazlar için */
+        @media (min-width: 1024px) {
+            img {
+                width: 350px;
+            }
+        }
+
+        /* Tabletler için */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            img {
+                width: 250px;
+            }
+        }
+
+        /* Mobil cihazlar için */
+        @media (max-width: 767px) {
+            img {
+                width: 200px;
+            }
+        }
+
+        /* Başlık ve oyun alanı arasında biraz boşluk ekleyelim */
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        /* Mesaj kutuları */
+        #message-box {
+            color: green; /* Tebrikler mesajını yeşil yaptık */
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        #error-box {
+            color: red; /* Yanlış cevap mesajını kırmızı yaptık */
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body> 
+    <div id="game-area">
+        <h1>ANETİL Harf Grubu Kelime Oluşturma Oyunu</h1>
+        <button id="start-button" style="margin-top: 20px;">Oyunu Başlat</button>
+        
+        <br><br> <!-- İki satır ara ekledik -->
+
+        <img src="gorseller/el.jpg" alt="Kelime Görseli" style="display:none;">
+        <div id="word-area"></div>
+        
+        <br><br> <!-- İki satır ara ekledik -->
+
+        <div id="letter-area"></div>
+        <div id="message-box" style="display:none;">Tebrikler! Doğru kelimeyi oluşturdunuz.</div>
+        <div id="error-box" style="display:none;">Yanlış Cevap! Yeniden Deneyin.</div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
